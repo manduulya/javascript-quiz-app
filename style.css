@@ -1,0 +1,21 @@
+*  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #d9d9d9;
+    text-align: center;
+    line-height: 2rem;
+}
+header{
+    padding: 30px;
+}
+main{
+    border: solid black 1px;
+    width: 60%;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #fff;
+}
+
