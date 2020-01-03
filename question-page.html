@@ -9,9 +9,9 @@
     <title>Javascript Quiz Question Page</title>
 </head>
 <body>
-    <main>
+    <form>
         <header>
-            <h1>Question 1 of 10</h1>
+            <h1>Question <span class="questionNumber">1</span> of 10</h1>
         </header>
         <section>
             <h3>1. Which one of following is correct method for accessing object? </h3>
@@ -21,8 +21,9 @@
             <p><input type="radio">object.Name.method.Name()</p>
         </section>
         <section>
-                <button>Submit</button>
+            <button>Submit</button>
+            <p>Your score is <span class="score">0</span></p>
         </section>
-    </main>
+    </form>
 </body>
 </html>

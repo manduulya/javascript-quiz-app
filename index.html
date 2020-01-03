@@ -9,16 +9,32 @@
     <title>Javascript Quiz</title>
 </head>
 <body>
-    <main>
+    <header>
         <header class="homePageHeader">
             <h1>Basic Javascript Quiz</h1>
+            <p>Your score is <span class="score">0</span>.</p></form>
+            <p>Question <span class="questionNumber">0</span> of 8</p>
         </header>
-        <section class="homePageButton">
-            <button>Start</button>
-        </section>
-        <section class="section-logo">
-            <img src="C:\Users\Ebo\Documents\quiz-app\images\js-logo.png" class="js-logo" alt="JS-logo">
+    </header>
+    <main>
+        <section class="mainBox">
+            <section class="homePage startQuiz">
+                <section class="homePageButton">
+                    <button class="startButton">Start</button>
+                </section>
+            </section>
+            <section class="questionPage altBox"></section>
+            <section class="feedbackPage altBox"></section>
+            <section class="finalPage altBox"></section>
         </section>
     </main>
+    <section class="section-logo">
+        <img src="C:\Users\Ebo\Documents\quiz-app\images\js-logo.png" class="js-logo" alt="JS-logo">
+    </section>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <script src="index.js"></script>
 </body>
 </html>
