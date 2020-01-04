@@ -2,16 +2,33 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 body{
-    background: #d9d9d9;
+    background: url("images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     text-align: center;
     line-height: 2rem;
 }
 .homePageHeader{
-    padding: 70px;
+    padding-top: 70px;
+    font-family: 'Patua One', cursive;
+}
+.homePageHeader h1{
+    font-size: 3em;
+    text-transform: uppercase;
+}
+.homePageHeader div{
+    font-size: 22px;
+    color: #FFFF13;
+    text-shadow: 2px 2px 10px #5B0FB4;
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-around;
 }
 main{
+    border-radius: 17px;
     border: solid black 2px;
     width: 60%;
     height: 60vh;
@@ -21,17 +38,140 @@ main{
     top: 25%;
     left: 20%;
 }
-.homePageButton Button{
-    width: 20%;
-    height: 50px;
+.welcome-banner{
+    width: 100%;
+}
+ Button {
+    width: 30%;
+    height: 60px;
+	box-shadow:inset 0px 0px 15px 3px #23395e;
+	background:linear-gradient(to bottom, #2e466e 5%, #415989 100%);
+	background-color:#2e466e;
+	border-radius:17px;
+	border:1px solid #1f2f47;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:6px 13px;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #263666;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 600;
+}
+Button:hover {
+	background:linear-gradient(to bottom, #415989 5%, #2e466e 100%);
+	background-color:#415989;
+}
+Button:active {
+	position:relative;
+	top:1px;
 }
 .section-logo{
     width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: flex-end;
 }
 .js-logo{
-    width: 150px;
+    width: 200px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.questionPage p{
+    font-size: 22px;
+    font-weight: 600;
+}
+#question{
+    width: 100%;
+    height: 60vh;
+}
+#question button{
+    margin-top: 68px;
+}
+#question input{
+    margin-top: 30px;
+}
+.feedbackPage h3{
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.feedbackPage .nextButton{
+    margin-top: 30px;
+}
+.feedbackPage .correct-button{
+    margin-top: 88px;
+}
+.feedbackPage .sizeMe{
+    font-size: 20px;
+    color: #892012;
+}
+.finalPage h3{
+    font-size: 26px;
+    text-transform: uppercase;
+}
+@media only screen and (max-width: 1024px) {
+    
+    main{
+        margin: 0 auto;
+        width: 90%;
+        height: 70vh;
+        left: 5%;
+    }
+    .startButton{
+        margin-top: 70px;
+    }
+}
+@media only screen and (max-width: 768px){
+    .homePageHeader h1{
+        font-size: 30px;
+    }
+    main{
+        margin: 0 auto;
+        width: 90%;
+        height: 70vh;
+        left: 5%;
+    }
+    .js-logo{
+        width: 50px;
+    }
+    button{
+        width: 50%;
+    }
+    .startButton{
+        margin-top: 60px;
+        width: 80%;
+    }
+
+}
+@media only screen and (max-width: 414px){
+    body{
+        background-size: cover;
+    }
+    .homePageHeader h1{
+        font-size: 26px;
+    }
+    main{
+        margin: 0 auto;
+        width: 90%;
+        height: 70vh;
+        left: 5%;
+    }
+    .startButton{
+        margin-top: 80px;
+        width: 80%;
+    }
+    .homePageHeader div{
+        font-size: 18px;
+    }
+    .questionPage{
+        font-size: 16px;
+    }
+    .js-logo{
+        display: none;
+    }
+    button{
+        width: 50%;
+    }
 }

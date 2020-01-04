@@ -108,7 +108,7 @@ function updateScore() {
 //and updates the "question number" text in the quiz view
 function updateQuestionNumber() {
   questionNumber++;
-  $('.questionNumber').text(questionNumber+1);
+  $('.questionNumber').text(questionNumber +1);
 }
 
 //resets the text value of the "question number" and "score" variables
@@ -122,14 +122,16 @@ function resetStats() {
 
 //begin the quiz
   function startQuiz(){
-    $('.startButton').on('click', function (event){
-      $('.altBox').hide();
+    $('.altBox').hide();
+    $('.startQuiz').on('click', '.startButton', function (event){
       $('.startQuiz').hide();
       $('.questionNumber').text(1);
       $('.questionPage').show();
-      generateQuestions();
-  });
+      $('.questionPage').prepend(generateQuestions());
+      // generateQuestions();
+    });
   }
+
 
 //submits a selected answer and checks it against the correct answer
 //runs answer functions accordingly
@@ -139,6 +141,11 @@ function submitAnswer() {
     $('.altBox').hide();
     $('.feedbackPage').show();
     let selected = $('input:checked');
+    // let selectedOption = $('input[name=answer]:checked').val();
+    // if (!selectedOption){
+    //   alert("Please choose an option ");
+    //   return;
+    // }
     let answer = selected.val();
     let correct = STORE[questionNumber].correctAnswer;
     if (answer === correct) {
@@ -156,55 +163,20 @@ function createThing(){
     + STORE[questionNumber].question
     + '</p>'
     + STORE[questionNumber].answer.map((answer) => {
-    return `<input type="radio" name="ans" value="${answer}"> ${answer}<br>`
+    return `<label><input type="radio" value="${answer}" name="ans" required> <span>${answer}</span><br></label>`
     }).join('')
-    + `<button type="button" class="check">Submit</button>`);
-$('.questionNumber').text(questionNumber);
+    + `<button type="button" class="check">Submit</button></form>`);
+$('.questionNumber').text(questionNumber +1);
 }
-
-
-
-// function startQuiz() {
-//     $('.altBox').hide();
-//     $('.startQuiz').on('click', '.startButton', function (event) {
-//       $('.startQuiz').hide();
-//       $('.questionNumber').text(1);
-//       $('.questionPage').show();
-//       $('.questionPage').prepend(generateQuestions());
-//     });
-//   }
-  
-
-//creates html for question form
-// function createThing(questionIndex) {
-//   let formMaker = $(`<form>
-//     <fieldset>
-//       <legend class="questionText">${STORE[questionIndex].question}</legend>
-//     </fieldset>
-//   </form>`)
-
-//   let fieldSelector = $(formMaker).find('fieldset');
-
-//   STORE[questionIndex].answers.forEach(function (answerValue, answerIndex) {
-//     $(`<label class="sizeMe" for="${answerIndex}">
-//         <input class="radio" type="radio" id="${answerIndex}" value="${answerValue}" name="answer" required>
-//         <span>${answerValue}</span>
-//       </label>
-//       `).appendTo(fieldSelector);
-//   });
-//   $(`<button type="submit" class="submitButton button">Submit</button >
-//     <p>Your score is <span class="score">0</span></p>`).appendTo(fieldSelector);
-//   return formMaker;
-// }
 
 //resulting feedback if a selected answer is correct
 //increments user score by one
 function correctAnswer() {
   $('.feedbackPage').html(
     `<h3>Your answer is correct!</h3>
-    <img src="./images/correct.png" alt="correct-emoji" class="images" width="300px">
+    <img src="./images/correct.png" alt="correct-emoji" class="images" width="200px">
       <p class="sizeMe">Fantastic!</p>
-      <button type="button" class="nextButton button">Next One!</button>`
+      <button type="button" class="nextButton button correct-button">Next One!</button>`
   );
   updateScore();
 }
@@ -213,7 +185,7 @@ function correctAnswer() {
 function wrongAnswer() {
   $('.feedbackPage').html(
     `<h3>That's the wrong answer...</h3>
-    <img src="./images/wrong.png" alt="wrong-emoji" class="images" width="300px">
+    <img src="./images/wrong.png" alt="wrong-emoji" class="images" width="200px">
     <p class="sizeMe">It's actually:</p>
     <p class="sizeMe">${STORE[questionNumber].correctAnswer}</p>
     <button type="button" class="nextButton button">Next</button>`
@@ -261,8 +233,8 @@ function finalScore() {
   }
   return $('.finalPage').html(
     `<h3>'Great Job!'</h3>
-      <img src="images/congrats.png" alt="congrats-emoji" class="images">
-        <h3>Your score is ${score} / 8</h3>
+      <img src="images/congrats.png" alt="congrats-emoji" class="images" width="300px">
+        <h3>Your score is ${score} of 8</h3>
         <button type="submit" class="restartButton button">Try Again!</button>`
   );
 }
