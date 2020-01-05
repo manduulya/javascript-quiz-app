@@ -136,16 +136,11 @@ function resetStats() {
 //submits a selected answer and checks it against the correct answer
 //runs answer functions accordingly
 function submitAnswer() {
-  $('.questionPage').on('click', '.check', function () {
+  $('.questionPage').on('submit', '.toMakeRequiredWork', function () {
     event.preventDefault();
     $('.altBox').hide();
     $('.feedbackPage').show();
     let selected = $('input:checked');
-    // let selectedOption = $('input[name=answer]:checked').val();
-    // if (!selectedOption){
-    //   alert("Please choose an option ");
-    //   return;
-    // }
     let answer = selected.val();
     let correct = STORE[questionNumber].correctAnswer;
     if (answer === correct) {
@@ -158,14 +153,14 @@ function submitAnswer() {
 
 //creates html for question form
 function createThing(){
-    $('.questionPage').html('<form id="question">'
+    $('.questionPage').html('<form id="question" class="toMakeRequiredWork">'
     + '<p>'
     + STORE[questionNumber].question
     + '</p>'
     + STORE[questionNumber].answer.map((answer) => {
-    return `<label><input type="radio" value="${answer}" name="ans" required> <span>${answer}</span><br></label>`
+    return `<label><input  type="radio" value="${answer}" name="ans" required/> <span>${answer}</span><br></label>`
     }).join('')
-    + `<button type="button" class="check">Submit</button></form>`);
+    + `<button type="submit" class="check">Submit</button></form>`);
 $('.questionNumber').text(questionNumber +1);
 }
 
