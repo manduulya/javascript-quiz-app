@@ -112,24 +112,34 @@ Button:active {
     text-transform: uppercase;
 }
 @media only screen and (max-width: 1024px) {
+    .homePageHeader h1{
+        font-size: 30px;
+    }
+    .homePageHeader{
+        padding-top: 35px;
+    }
+    .homePageButton img{
+        width: 70%;
+    }
     body{
         background-size: cover;
         background-repeat: repeat-y;
     }
     main{
+        padding: 15px;
         margin: 0 auto;
         width: 90%;
         height: 70vh;
         left: 5%;
     }
     .startButton{
-        margin-top: 70px;
+        margin-top: 0px;
+    }
+    .js-logo{
+        display: none;
     }
 }
 @media only screen and (max-width: 768px){
-    .homePageHeader h1{
-        font-size: 30px;
-    }
     main{
         margin: 0 auto;
         width: 90%;
@@ -143,7 +153,7 @@ Button:active {
         width: 50%;
     }
     .startButton{
-        margin-top: 60px;
+        margin-top: 0px;
         width: 80%;
     }
 
